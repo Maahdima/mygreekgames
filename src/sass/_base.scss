@@ -1,0 +1,43 @@
+// COLOR VARIABLES
+$color-primary: #0c5f6d;
+$color-primary-light: #279d94;
+
+$color-secondary: #061c41;
+
+$color-tertiary: #725f41;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+$color-grey-light-3: #889197;
+$color-grey-light-4: #a3aaaf;
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+$color-white: #fff;
+$color-black: #000;
+$color-dark: #22252c;
+$color-blue: #1877f2;
+
+// FONT VARIABLES
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-primary;
+  font-weight: 300;
+  line-height: 1.3;
+}
