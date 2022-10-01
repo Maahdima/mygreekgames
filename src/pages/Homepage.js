@@ -1,6 +1,15 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef, useState } from "react";
 import "../main.css";
 import logoImg from "../img/mygreekgameslogo.png";
+import { ReactComponent as SearchIcon } from "../img/Icon-search.svg";
+import { ReactComponent as LoveIcon } from "../img/Icon-love.svg";
+import { ReactComponent as ShopIcon } from "../img/Icon-shop.svg";
+import { ReactComponent as PersonIcon } from "../img/Icon-person.svg";
+import { ReactComponent as InstaIcon } from "../img/Icon-insta.svg";
+import { ReactComponent as FacebookIcon } from "../img/Icon-facebook.svg";
+import { ReactComponent as YoutubeIcon } from "../img/Icon-youtube.svg";
+import search from "../img/Icon-search.svg";
 import banner from "../img/Banner.jpg";
 import banner2 from "../img/Banner2.jpg";
 import banner3 from "../img/Banner3.jpg";
@@ -41,6 +50,8 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 
 function Homepage() {
+  const [shopHoverState, setShopHoverState] = useState(false);
+
   return (
     <div className="container">
       <div className="header-1">
@@ -53,7 +64,11 @@ function Homepage() {
             src={logoImg}
             alt="geek for gamers logo"
           />
-          <a class="header-2-left-category" href="#">
+          <a
+            onClick={() => setShopHoverState(!shopHoverState)}
+            class="header-2-left-category"
+            href="#"
+          >
             shop
           </a>
           <a className="header-2-left-category" href="#">
@@ -64,13 +79,18 @@ function Homepage() {
           </a>
         </div>
         <div class="header-2-right">
-          <img className="searchlogo" src="" alt="search logo" />
-          <img className="lovelogo" src="" alt=" love logo" />
-          <img className="shoplogo" src="" alt="shop logo" />
-          <img className="personlogo" src="" alt="person logo" />
-          <a href="#">EN</a>
+          <SearchIcon className="header-2-right-searchlogo" />
+          <LoveIcon className="header-2-right-lovelogo" />
+          <ShopIcon className="header-2-right-shoplogo" />
+          <PersonIcon className="header-2-right-personlogo" />
+          <a className="header-2-right-lang" href="#">
+            EN
+          </a>
         </div>
       </header>
+      {shopHoverState && (
+        <div className="header-2-left-category-div">salaaaaaaaaaaaaam</div>
+      )}
 
       <Swiper
         loop={true}
@@ -509,9 +529,11 @@ function Homepage() {
           </div>
           <div className="footer-top-4">
             <h1 className="footer-title">Follow us</h1>
-            <h4 className="footer-title-text">Facebook</h4>
-            <h4 className="footer-title-text">Instagram</h4>
-            <h4 className="footer-title-text">Youtube</h4>
+            <div className="footer-top-4-container">
+              <FacebookIcon className="footer-top-4-container-facebook" />
+              <InstaIcon className="footer-top-4-container-insta" />
+              <YoutubeIcon className="footer-top-4-container-youtube" />
+            </div>
           </div>
         </div>
         <hr className="hr" />
